@@ -1,0 +1,316 @@
+/* fonts */
+@import url('https://fonts.googleapis.com/css2?family=Chivo:wght@300;400&display=swap');
+
+/* general rules */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+/* bases colors */
+:root {
+  --emphasis-color: #54E6AF;
+  --input-background: #2C344B;
+  --button-text: #121725;
+  --light-text: #ffffff;
+  --body-text: #C2CBE5;
+}
+
+body {
+  font-family: 'Chivo', sans-serif;
+  overflow-x: hidden;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.background {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(18,23,37,1.0);
+}
+
+.background::before {
+  content: "";
+  background-image: url(assets/mobile/image-host.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  background-repeat: no-repeat;
+  opacity: 0.05;
+}
+
+.background > * {
+    position: relative;
+}
+
+.logo {
+  padding-top: 62px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+h1, p, .podcasting-logos img{
+  opacity: 0.7;
+}
+
+h1 {
+  margin-top: 57px;
+  font-family: 'Chivo', sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 26px;
+  line-height: 38px;
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--emphasis-color);
+}
+
+h1 span {
+  font-weight: 300;
+  color: var(--light-text);
+}
+
+p {
+  margin: 16px 24px 33px 24px;
+  font-family: 'Chivo';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 25px;
+  text-align: center;
+  color: var(--body-text);
+}
+
+.podcasting-logos {
+  width: 315px;
+  height: 17px;
+  margin: 0 auto;
+}
+
+.podcasting-logos img:hover {
+  opacity: 1.0;
+}
+
+.podcasting-logos_spotify {
+  width: 56px;
+  margin-right: 19px;
+}
+
+.podcasting-logos_apple {
+  width: 45px;
+  margin-right: 21px; 
+}
+
+.podcasting-logos_google {
+  width: 73px;
+  margin-right: 11px;
+}
+
+.podcasting-logos_pocket {
+  width: 77px;
+}
+
+form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+input {
+  border: 0;
+  height: 46px;
+  margin: 48px 24px 16px 24px;
+  width: clamp(100px, 100%, 375px);
+  padding: 9px 32px;
+  background: var(--input-background);
+  border-radius: 28px;
+
+  font-family: Chivo;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 28px;
+
+  color: var(--light-text);
+}
+
+input:focus {
+    outline-style: none;
+}
+
+form:invalid > button {
+  opacity: 0.7;
+}
+
+button {
+  border: 0;
+  height: 46px;
+  margin: 0 24px 0 24px;
+  width: clamp(100px, 100%, 375px);
+  background: var(--emphasis-color);
+  box-shadow: 0px 25px 20px -20px rgba(84, 230, 175, 0.497913);
+  border-radius: 28px;
+
+  font-family: 'Chivo';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 28px;
+  color: var(--button-text);
+  transition: all 0.5s ease;
+}
+
+button:hover {
+  background: #B3FFE2;
+}
+
+
+
+@media screen and (min-width: 768px) {
+  body {
+    background-color: rgba(18,23,37,1.0);
+  }
+
+  .background {
+    display: block;
+    background: url(assets/tablet/image-host.jpg) top right no-repeat,
+                url(assets/desktop/bg-pattern-dots.svg) bottom left 30px no-repeat, rgba(18,23,37,1.0);
+    padding-left: 39px;
+  }
+
+  .background::before {
+    background-image: none;
+  }
+
+  .logo {
+    padding-top: 50px;
+    margin: 0 0 152px 0;
+  }
+
+  h1 {
+    opacity: 0.95;
+  }
+
+  p {
+    opacity: 0.8;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    width: 635px;
+    height: 509px;
+    background-color: rgba(18,23,37,1.0);
+  }
+
+  h1 {
+    margin-top: 0;
+    padding-top: 93px;
+    margin-bottom: 31px;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 48px;
+    line-height: 56px;
+    text-transform: uppercase;
+    text-align: left;
+  }
+
+  p {
+    text-align: left;
+    margin: 0;
+    max-width: 445px;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 28px;
+  }
+
+  form {
+    display: inline;
+  }
+
+  input {
+    margin: 40px 0;
+    width: 427px;
+    height: 56px;
+  }
+
+  button {
+    margin: 0 0 0 -172px;
+    width: 162px;
+    height: 46px;
+  }
+
+  .podcasting-logos {
+    order: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 536px;
+    height: 29px;
+    margin: 22px 0;
+  }
+
+  .podcasting-logos_spotify {
+    width: 96px;
+    height: 29px;
+    margin-right: 0;
+  }
+
+  .podcasting-logos_apple {
+    width: 78px;
+    height: 29px;
+    margin-right: 0;
+  }
+
+  .podcasting-logos_google {
+    width: 125px;
+    height: 18px;
+    margin-right: 0;
+  }
+
+  .podcasting-logos_pocket {
+    width: 129px;
+    height: 26px;
+  }
+}
+
+
+
+@media screen and (min-width: 1000px) {
+
+  .background {
+    display: block;
+    background: url(assets/desktop/bg-pattern-dots.svg) top 715px right no-repeat,
+                url(assets/desktop/image-host.jpg) top 127px right no-repeat, rgba(18,23,37,1.0);
+    padding-left: 165px;
+  }
+
+  .logo {
+    padding-top: 102px;
+    margin: 0 0 103px 0;
+  }
+
+  .content {
+    width: 723px;
+    height: 509px;
+  }
+
+  h1 {
+    padding-top: 88px;
+    margin-bottom: 24px;
+    font-size: 52px;
+    line-height: 62px;
+  }
+
+  .podcasting-logos_spotify {
+    margin-right: 6px;
+  }
+}
